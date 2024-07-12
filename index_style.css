@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Nav-Bar Style */
+header {
+    background: #3E4E56;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-profile, .navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.profile-label {
+    margin-right: 5px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Main Body style CSS */
+.main-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.doctor-cards {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.second-div {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.announcements, .prev-treatments {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Doctor Card Styles */
+.doctor-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.doctor-card img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.doctor-details {
+    flex: 1;
+}
+
+.doctor-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-table {
+    width: 100%;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.info-table td {
+    padding: 15px;
+    border: none;
+}
+
+.info-table td:first-child {
+    font-weight: bold;
+    background: #3E4E56;
+    color: #FFF;
+    padding: 15px;
+    text-align: left;
+}
+
+.info-table td:last-child {
+    text-align: left;
+    padding: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn, .btn-2, .btn-3 {
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    background-color: #3E4E56;
+}
+
+.btn-2 {
+    background-color: #FF5722;
+}
+
+.btn-3 {
+    background-color: #FF5722;
+    margin-left: auto; 
+}
+
+.btn:hover, .btn-2:hover, .btn-3:hover {
+    background-color: #0056b3;
+}
+
+/* Announcements and Previous Treatments Styles */
+.announcements h2, .prev-treatments h2 {
+    color: #3E4E56;
+    margin-bottom: 20px;
+}
+
+.announcements p, .prev-treatments p {
+    color: #333;
+}
+
+.announcements a, .prev-treatments a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #3E4E56;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.indicator {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Responsiveness */
+/* @media (max-width: 768px) {
+    .main-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .doctor-cards, .second-div {
+        width: 100%;
+    }
+
+    .second-div {
+        margin-top: 20px;
+    }
+} */

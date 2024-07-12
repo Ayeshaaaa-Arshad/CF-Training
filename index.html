@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APS</title>
+    <link rel="stylesheet" href="index_style.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/hospital_logo.jpeg" alt="Pharmacy Logo"
+                        style="width: 50px;border-radius: 10px;"></a>
+                <span class="logo-text">Medicare</span>
+            </div>
+            <div class="navbar-profile">
+                <span class="profile-label">Profile</span>
+                <a href="edit_profile.html"><img src="images/profile-img.jpeg" alt="profile-img"
+                        class="profile-img"></a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Background Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="images/hospital_img.webp" alt="Image-1">
+            <img src="images/hospital_img2.jpg" alt="Image-2">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="indicator">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <div class="main-body">
+        <div id="doctor-info-container" class="doctor-cards">
+            <!-- Doctor cards from json server -->
+        </div>
+        <div class="second-div">
+            <div class="announcements">
+                <h2>Announcement</h2>
+                <p>If you need a doctor urgently outside of medicenter opening hours, call emergency appointment number
+                    for
+                    emergency service.</p>
+            </div>
+            <div class="prev-treatments">
+                <h2>Previous Treatments</h2>
+                <p>If you want to see your previous treatments, <a href="prev_treatments.html">Click Here</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to cancel this appointment?</p>
+            <button id="confirm-cancel-btn" class="btn-3" onclick="cancelAppointment()">Yes, Cancel Appointment</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </footer>
+
+    <script src="index_script.js"></script>
+
+</body>
+
+</html>
