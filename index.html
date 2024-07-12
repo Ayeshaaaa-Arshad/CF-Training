@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APS</title>
+    <link rel="stylesheet" href="index_style.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/hospital_logo.jpeg" alt="Pharmacy Logo"
+                        style="width: 50px;border-radius: 10px;"></a>
+                <span class="logo-text">Medicare</span>
+            </div>
+            <div class="navbar-profile">
+                <span class="profile-label">Profile</span>
+                <a href="edit_profile.html"><img src="images/profile-img.jpeg" alt="profile-img"
+                        class="profile-img"></a>
+            </div>
+        </nav>
+    </header>
+
+  
+    <!-- Background Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="images/hospital_img.webp" alt="Image-1">
+            <img src="images/hospital_img2.jpg" alt="Image-2">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="indicator">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <!-- Doctors Info -->
+    <div class="main-body">
+        <div class="box1">
+            <div class="doctor-details">
+                <div>
+                    <img class="doctor-img" src="images/doctor-pic-01.jpg" alt="Doctor Picture">
+                    <h3>Dr. John</h3>
+                    <h6>Cardiothoracic Anesthesia and Anesthesiology - FCI</h6>
+                </div>
+                <div class="doctor-info">
+                    <table class="info-table">
+                        <tr>
+                            <td>Doctor ID:</td>
+                            <td>ALN123</td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>Dr. John</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>john@example.com</td>
+                        </tr>
+                    </table>
+                    <div class="buttons">
+                        <button class="btn-2" onclick="confirmCancel()">Cancel Appointment</button>
+                        <button class="btn" onclick="redirectToBooking()">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-details">
+                <div>
+                    <img class="doctor-img" src="images/doctor-2.jpeg" alt="Doctor Picture">
+                    <h3>Dr. Alena</h3>
+                    <h6>Special Assistance - FCI</h6>
+                </div>
+                <div class="doctor-info">
+                    <table class="info-table">
+                        <tr>
+                            <td>Doctor ID:</td>
+                            <td>JHN456</td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>Dr. Alena</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>alena@example.com</td>
+                        </tr>
+                    </table>
+                    <div class="buttons">
+                        <button class="btn-2" onclick="confirmCancel()">Cancel Appointment</button>
+                        <button class="btn" onclick="redirectToBooking()">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="announcments">
+            <h2>Announcement</h2>
+            <p>If you need a doctor urgently outside of medicenter opening hours, call emergency appointment number for
+                emergency service.</p>
+        </div>
+        <div class="Prev-Treatments">
+            <h2>Previous Treatments</h2>
+            <p>If you want to see your previous treatments, <a href="prev_treatments.html">Click Here</a></p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to cancel this appointment?</p>
+            <button id="confirm-cancel-btn" class="btn-3" onclick="cancelAppointment()">Yes, Cancel Appointment</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides")[0];
+            let dots = document.getElementsByClassName("dot");
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            dots[slideIndex].className += " active";
+        }
+
+        function changeSlide(n) {
+            let slides = document.getElementsByClassName("slides")[0].children.length;
+            slideIndex = (slideIndex + n + slides) % slides;
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        function redirectToBooking() {
+            window.location.href = "book_appointment.html";
+        }
+
+        function confirmCancel() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function cancelAppointment() {
+            closeModal();
+            alert("Appointment canceled successfully.");
+        }
+    </script>
+
+</body>
+
+</html>

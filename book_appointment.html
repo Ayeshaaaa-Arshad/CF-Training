@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="book_appointment.css">
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/hospital_logo.jpeg" alt="Pharmacy Logo"
+                        style="width: 50px; border-radius: 10px;"></a>
+                <span class="logo-text">Medicare</span>
+            </div>
+            <div class="navbar-profile">
+                <span class="profile-label">Profile</span>
+                <a href="edit_profile.html"><img src="/images/profile-img.jpeg" alt="profile-img"
+                        class="profile-img"></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Doctor Details -->
+    <div class="doctor-details">
+        <div class="doctor-info">
+            <img class="doctor-img" src="images/doctor-pic-01.jpg" alt="Doctor Picture">
+            <h2>Dr. John</h2>
+            <p>Cardiothoracic Anesthesia and Anesthesiology - FCI</p>
+            <h3>Price: $15.00</h3>
+
+            <!-- Datepicker -->
+            <label for="appointment-date">Select Appointment Date:</label>
+            <input type="date" id="appointment-date" name="appointment-date">
+
+            <!-- Book Appointment Button -->
+            <button class="btn" onclick="booked()">Book Appointment</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </footer>
+    <script>
+        function booked() {
+            alert('Succesfully Booked')
+        }
+    </script>
+
+</body>
+
+</html>
