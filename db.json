@@ -1,0 +1,103 @@
+{
+  "announcements": [
+    {
+      "id": "1",
+      "title": "Important Announcement",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "2024-07-17T08:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Upcoming Event",
+      "content": "Nulla facilisi. Duis sollicitudin.",
+      "date": "2024-07-18T08:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "New Policy Update",
+      "content": "Pellentesque habitant morbi tristique senectus et netus.",
+      "date": "2024-07-19T08:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Holiday Schedule",
+      "content": "Vestibulum ante ipsum primis in faucibus orci luctu.",
+      "date": "2024-07-20T08:00:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Service Maintenance",
+      "content": "Etiam vestibulum velit eu laoreet consequat.",
+      "date": "2024-07-21T08:00:00Z"
+    }
+  ],
+  "prev_treatments": [
+    {
+      "id": "1",
+      "date": "January 15, 2023",
+      "treatment": "General Checkup",
+      "doctor": "Dr. Smith",
+      "notes": "All good"
+    },
+    {
+      "id": "2",
+      "date": "February 20, 2023",
+      "treatment": "Blood Test",
+      "doctor": "Dr. Brown",
+      "notes": "Results normal"
+    }
+  ],
+  "doctors": [
+    {
+      "name": "Dr. John",
+      "email": "john@example.com",
+      "designation": "Cardiothoracic Anesthesia and Anesthesiology - FCI",
+      "image": "images/doctor-pic-01.jpg",
+      "price": "15.00",
+      "id": "9068"
+    },
+    {
+      "name": "Dr. Alena",
+      "email": "alena@example.com",
+      "designation": "Special Assistance - FCI",
+      "image": "images/doctor-2.jpeg",
+      "price": "15.00",
+      "id": "7a1e"
+    },
+    {
+      "name": "Dr. John",
+      "email": "john@example.com",
+      "designation": "Cardiothoracic Anesthesia and Anesthesiology - FCI",
+      "image": "images/doctor-pic-01.jpg",
+      "price": "15.00",
+      "id": "7422"
+    },
+    {
+      "name": "Dr. John",
+      "email": "john@example.com",
+      "designation": "Cardiothoracic Anesthesia and Anesthesiology - FCI",
+      "image": "images/doctor-pic-01.jpg",
+      "price": "15.00",
+      "id": "2b43"
+    },
+    {
+      "name": "Dr. John",
+      "email": "john@example.com",
+      "designation": "Cardiothoracic Anesthesia and Anesthesiology - FCI",
+      "image": "images/doctor-pic-01.jpg",
+      "price": "15.00",
+      "id": "f9a3"
+    }
+  ],
+  "patients": [
+    {
+      "id": "1",
+      "idNumber": "121",
+      "firstName": "Chris",
+      "lastName": "Alex",
+      "phone": "09876543210",
+      "gender": "male",
+      "profileImage": "doctor-2.jpeg"
+    }
+  ]
+}

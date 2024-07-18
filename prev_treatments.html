@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Treatments Details</title>
+    <link rel="stylesheet" href="prev_treatments.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/hospital_logo.jpeg" alt="Pharmacy Logo" style="width: 50px;border-radius: 10px;"></a>
+               <a href="index.html"> <span class="logo-text">Medicare</span></a>
+            </div>
+            <div class="navbar-profile">
+                <a href="edit_profile.html"><span class="profile-label">Profile</span></a>
+                <a href="edit_profile.html"><img id="profile-img" src="images/profile-img.jpeg" alt="profile-img" class="profile-img"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 style="margin-left: 30%; margin-top: 20px;">Previous Treatments</h1>
+        <table class="treatment-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Treatment</th>
+                    <th>Doctor</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody id="treatment-table-body">
+                <!-- Data will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="prev_treatments.js"></script>
+</body>
+</html>
