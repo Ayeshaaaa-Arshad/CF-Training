@@ -1,0 +1,67 @@
+<!-- index.html -->
+{% extends 'AMS/base.html' %}
+{% load static %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/index_style.css' %}">{% endblock %}
+
+{% block title %}Home - Medicare{% endblock %}
+
+{% block content %}
+    <!-- Background Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="{% static 'AMS/images/hospital_img.webp' %}" alt="Image-1">
+            <img src="{% static 'AMS/images/hospital_img2.jpg' %}" alt="Image-2">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="indicator">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <div class="main-body">
+        <div id="doctor-info-container" class="doctor-cards">
+            <!-- Doctor cards from json server -->
+        </div>
+
+        <div class="second-div">
+            <!-- Announcements Section -->
+            <div class="announcements-slider">
+                <div class="announcement-container">
+                    <!-- Announcements -->
+                </div>
+                <button class="prev-announcement" onclick="changeAnnouncement(-1)">&#10094;</button>
+                <button class="next-announcement" onclick="changeAnnouncement(1)">&#10095;</button>
+            </div>
+
+            <div class="prev-treatments">
+                <h2>Previous Treatments</h2>
+                <ul id="prevTreatmentsList">
+                    <!-- Previous Treatments  -->
+                </ul>
+                <a href="{%url 'prev_treatment'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="btn-prev" onclick="prevPage()">Previous</button>
+        <div id="page-numbers" class="page-numbers">
+            <!-- Page number buttons will change auto in js file-->
+        </div>
+        <button id="btn-next" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to cancel this appointment?</p>
+            <button id="confirm-cancel-btn" class="btn-3" onclick="cancelAppointment()">Yes, Cancel Appointment</button>
+        </div>
+    </div>
+    {% block extra_js %} <script src="{% static 'AMS/js/index_script.js' %}"></script>{% endblock %}
+{% endblock %}

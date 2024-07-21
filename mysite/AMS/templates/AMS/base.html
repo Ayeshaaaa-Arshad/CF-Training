@@ -1,0 +1,36 @@
+{% load static %}
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Medicare{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/AMS/css/base_style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="{% url 'index' %}"><img src="{% static 'AMS/images/hospital_logo.jpeg' %}" alt="Pharmacy Logo" style="width: 50px; border-radius: 10px;"></a>
+                <a href="{% url 'index' %}"><span class="logo-text">Medicare</span></a>
+            </div>
+            <div class="navbar-profile">
+                <a href="{% url 'edit_profile' %}"><span class="profile-label">Profile</span></a>
+                <a href="{% url 'edit_profile' %}"><img id="profile-img" src="{% static 'AMS/images/profile-img.jpeg' %}" alt="profile-img" class="profile-img"></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Content Block -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </footer>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

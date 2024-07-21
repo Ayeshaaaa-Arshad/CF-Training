@@ -1,0 +1,50 @@
+{% extends "AMS/base.html"%}
+{%load static%}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/edit_profile_style.css' %}">{% endblock %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Personal Information</h1>
+    <form id="editForm" enctype="multipart/form-data">
+        <div class="form-section">
+            <label for="idNumber">Id Number:</label>
+            <input type="text" id="idNumber" name="idNumber">
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label>Gender:</label>
+            <div class="gender-options">
+                <label>
+                    <input type="radio" name="gender" value="female"> Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="male"> Male
+                </label>
+            </div>
+
+            <label for="profileImage">Image Profile:</label>
+            <input type="file" id="profileImage" name="profileImage">
+        </div>
+
+        <button type="submit" class="btn" >Save Changes</button>
+    </form>
+</div>
+<!-- Notification Popup -->
+<div id="notification-popup" class="notification-popup">
+<p id="notification-message"></p>
+</div>
+
+{%endblock%}
+
+{% block extra_js%} <script src="AMS/js/edit_profile_script.js"></script>{%endblock%}
