@@ -1,0 +1,132 @@
+/* Doctor Details */
+.doctor-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.doctor-info {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-img {
+    width: 60%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+input[type="date"] {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #3E4E56;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Popup Notification */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    color:  #3E4E56;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 0;
+    z-index: 1;
+}
+
+.popup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Media query for tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+    .doctor-info {
+        width: 70%; 
+    }
+}
+
+/* Media query for tablets */
+@media screen and (max-width: 768px) {
+    .doctor-info {
+        width: 90%; 
+    }
+
+    .doctor-img {
+        width: 80%; 
+    }
+
+    .info-table {
+        width: 100%; 
+    }
+}
+
+/* Media query for mobile phones */
+@media screen and (max-width: 480px) {
+    .doctor-info {
+        width: 95%;
+        padding: 10px; 
+    }
+
+    .doctor-img {
+        width: 100%;
+    }
+
+    .info-table {
+        width: 100%; 
+    }
+
+    .info-table td {
+        padding: 10px; 
+    }
+
+    .btn {
+        width: 100%; 
+        font-size: 14px; 
+    }
+}
