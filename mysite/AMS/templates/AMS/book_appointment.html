@@ -1,0 +1,25 @@
+{% extends "AMS/base.html"%}
+{%load static%}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/book_appointment_style.css' %}">{% endblock %}
+
+{% block title %}Book Appointment{% endblock %}
+
+{% block content %}
+  
+  <!-- Doctor Details -->
+  <div class="doctor-details">
+    <div class="doctor-info" id="doctor-info">
+        <!-- Doctor details will be populated here -->
+    </div>
+</div>
+
+<!-- Popup Notification -->
+<div class="popup" id="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <p>Successfully Booked Appointment!</p>
+</div>
+
+{%endblock%}
+
+{% block extra_js%} <script src="AMS/js/book_appointment_script.js"></script>{%endblock%}

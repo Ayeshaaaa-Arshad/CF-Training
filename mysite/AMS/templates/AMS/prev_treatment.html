@@ -1,0 +1,28 @@
+{% extends "AMS/base.html"%}
+{%load static%}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/prev_treatment_style.css' %}">{% endblock %}
+
+{% block title %}Previous Treatments{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="margin-left: 30%; margin-top: 20px;">Previous Treatments</h1>
+    <table class="treatment-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Treatment</th>
+                <th>Doctor</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="treatment-table-body">
+            <!-- Data will be dynamically populated here -->
+        </tbody>
+    </table>
+
+    {%endblock%}
+
+    {% block extra_js%} <script src="AMS/js/prev_treatment_script.js"></script>{%endblock%}
+    
