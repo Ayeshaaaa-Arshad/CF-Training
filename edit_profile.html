@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="edit-profile.css">
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/hospital_logo.jpeg" alt="Pharmacy Logo"
+                        style="width: 50px; border-radius: 10px;"></a>
+                        <a href="index.html"> <span class="logo-text">Medicare</span></a>
+            </div>
+            <div class="navbar-profile">
+                <a href="index.html"> <span class="go-back">Go Back</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Personal Information</h1>
+        <form id="editForm" enctype="multipart/form-data">
+            <div class="form-section">
+                <label for="idNumber">Id Number:</label>
+                <input type="text" id="idNumber" name="idNumber">
+
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName">
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <label>
+                        <input type="radio" name="gender" value="female"> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male"> Male
+                    </label>
+                </div>
+
+                <label for="profileImage">Image Profile:</label>
+                <input type="file" id="profileImage" name="profileImage">
+            </div>
+
+            <button type="submit" class="btn" >Save Changes</button>
+        </form>
+    </div>
+    <!-- Notification Popup -->
+<div id="notification-popup" class="notification-popup">
+    <p id="notification-message"></p>
+</div>
+
+    <footer>
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </footer>
+
+    <script src="edit_profile.js"></script>
+</body>
+
+</html>

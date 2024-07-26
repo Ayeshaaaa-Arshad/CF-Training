@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="book_appointment.css">
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/hospital_logo.jpeg" alt="Pharmacy Logo"
+                        style="width: 50px; border-radius: 10px;"></a>
+               <a href="index.html"> <span class="logo-text">Medicare</span></a>
+            </div>
+            <div class="navbar-profile">
+                <a href="edit_profile.html"><span class="profile-label">Profile</span></a>
+                <a href="edit_profile.html"><img id="profile-img" src="images/profile-img.jpeg" alt="profile-img" class="profile-img"></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Doctor Details -->
+    <div class="doctor-details">
+        <div class="doctor-info" id="doctor-info">
+            <!-- Doctor details will be populated here -->
+        </div>
+    </div>
+
+    <!-- Popup Notification -->
+    <div class="popup" id="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p>Successfully Booked Appointment!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Medicare. All rights reserved.</p>
+    </footer>
+
+    <script src="book_appointment.js"></script>
+
+</body>
+
+</html>
