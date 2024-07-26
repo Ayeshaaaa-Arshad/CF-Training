@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .validators import validate_image_file_extension
 from django.core.exceptions import ValidationError
+from .CustomManager import AppointmentManager
     
 
     
@@ -45,6 +46,8 @@ class Appointment(models.Model):
     date = models.DateTimeField()
     status = models.BooleanField()
 
+    objects = AppointmentManager()
+
     def __str__(self):
         return f"Appointment: {self.patient} with {self.doctor} on {self.date}"
 
@@ -62,6 +65,7 @@ class Announcement(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
     is_deleted = models.BooleanField(default=False)
+
 
     def __str__(self):
         return f"Announcement by {self.creator}: {self.description}"

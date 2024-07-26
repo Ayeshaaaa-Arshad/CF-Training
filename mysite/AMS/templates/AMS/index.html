@@ -44,8 +44,8 @@
                                 </tr>
                             </tbody></table>
                             <div class="buttons">
-                                <button class="btn" onclick="redirectToBooking()">Book Appointment</button>
-                                <button class="btn-2" onclick="confirmCancel()">Cancel Appointment</button>     
+                                <button class="book-btn" onclick="redirectToBooking()">Book Appointment</button>
+                                <button class="cancel-btn" onclick="confirmCancel()">Cancel Appointment</button>     
                             </div>
                                
                         </div>   
@@ -74,7 +74,7 @@
                 <ul id="prevTreatmentsList">
                     <!-- Previous Treatments  -->
                 </ul>
-                <a href="{%url 'prev_treatment'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
+                <a href="{%url 'prev_treatments'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
             </div>
         </div>
     </div>
@@ -93,7 +93,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <p>Are you sure you want to cancel this appointment?</p>
-            <button id="confirm-cancel-btn" class="btn-3" onclick="cancelAppointment()">Yes, Cancel Appointment</button>
+            <button id="confirm-cancel-btn" class="confirm-btn" onclick="cancelAppointment()">Yes, Cancel Appointment</button>
         </div>
     </div>
     {% block extra_js %} <script src="{% static 'AMS/js/index_script.js' %}"></script>{% endblock %}

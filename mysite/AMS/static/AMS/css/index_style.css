@@ -119,7 +119,7 @@
     margin-top: 20px;
 }
 
-.btn, .btn-2, .btn-3 {
+.book-btn, .cancel-btn, .confirm-btn {
     padding: 10px 20px;
     color: #FFF;
     border: none;
@@ -129,20 +129,20 @@
     transition: background-color 0.3s;
 }
 
-.btn {
+.book-btn {
     background-color: #3E4E56;
 }
 
-.btn-2 {
+.cancel-btn {
     background-color: #FF5722;
 }
 
-.btn-3 {
+.confirm-btn {
     background-color: #FF5722;
     margin-left: auto; 
 }
 
-.btn:hover, .btn-2:hover, .btn-3:hover {
+.book-btn:hover, .cancel-btn:hover, .confirm-btn:hover {
     background-color: #0056b3;
 }
 /* Announcements Slider Container */
@@ -288,7 +288,7 @@
     margin-bottom: 20px;
 }
 
-.btn-3 {
+.confirm-btn {
     background-color: #FF5722;
     color: white;
     border: none;
@@ -299,7 +299,7 @@
     transition: background-color 0.3s, transform 0.3s ease-in-out;
 }
 
-.btn-3:hover {
+.confirm-btn:hover {
     background-color: #FF7043; 
 }
 

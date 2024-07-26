@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from .models import *
+from django.shortcuts import render
+
 
 def index_page(request):
     doctors = Doctor.objects.all()
@@ -13,8 +14,11 @@ def edit_profile_page(request):
 def book_appointment_page(request):
     return render(request,'AMS/book_appointment.html')
 
-def prev_treatment_page(request):
-    return render(request,'AMS/prev_treatment.html')
+def prev_treatments_page(request):
+    return render(request,'AMS/prev_treatments.html')
 
-def login_singup_page(request):
-    return render(request,'AMS/login_signup.html')
+def login_page(request):
+    return render(request,'AMS/login.html')
+
+def signup_page(request):
+    return render(request,'AMS/signup.html')
