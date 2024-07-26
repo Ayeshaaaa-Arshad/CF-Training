@@ -15,26 +15,6 @@
     margin-top: -50px; 
 }
 
-.form-toggle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.form-toggle a {
-    cursor: pointer;
-    margin: 0 10px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
-
-.form-toggle a.active {
-    border-color: #007bff;
-}
-
 .form {
     text-align: left;
     margin-top: 20px; 
@@ -64,7 +44,6 @@ input[type="email"] {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-    margin-left: 182px;
 }
 
 .form-btn:hover {
@@ -83,4 +62,15 @@ input[type="email"] {
     border-radius: 10px;
     animation: slideInRight 0.5s forwards;
     z-index: 1000;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

@@ -75,7 +75,7 @@ input[type="radio"] {
     text-decoration: underline;
 }
 
-.btn {
+.save-btn {
     display: block;
     width: 100%;
     padding: 10px;
@@ -87,7 +87,7 @@ input[type="radio"] {
     font-size: 16px;
 }
 
-.btn:hover {
+.save-btn:hover {
     background-color: #0056b3;
 }
 
@@ -127,7 +127,7 @@ input[type="radio"] {
         margin-bottom: 10px;
     }
 
-    .btn {
+    .save-btn {
         font-size: 14px;
     }
 }
