@@ -14,8 +14,8 @@ def edit_profile_page(request):
 def book_appointment_page(request):
     return render(request,'AMS/book_appointment.html')
 
-def prev_treatments_page(request):
-    return render(request,'AMS/prev_treatments.html')
+def treatments_page(request):
+    return render(request,'AMS/treatments.html')
 
 def login_page(request):
     return render(request,'AMS/login.html')
