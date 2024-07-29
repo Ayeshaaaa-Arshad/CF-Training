@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Booking and Modal Functionality
     window.redirectToBooking = function() {
-        window.location.href = "book_appointment.html";
+        window.location.href = "book_appointment";
     }
 
     window.confirmCancel = function() {

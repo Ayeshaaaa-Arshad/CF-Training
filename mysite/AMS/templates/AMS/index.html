@@ -58,9 +58,9 @@
             <div class="announcements-slider">
                 <div class="announcement-container">
                     <!-- Announcements -->
-                     {% for announcement in announcements%}
+                     {% for announcement in Announcements%}
                     <div class="announcement-card" style="display: none;">
-                        <h3>Dr. {{announcement.creator.first_name}}</h3>
+                        <h3>{{announcement.title}}</h3>
                         <p>{{announcement.description}}</p>
                     </div>
                     {%endfor%}
@@ -72,7 +72,9 @@
             <div class="prev-treatments">
                 <h2>Previous Treatments</h2>
                 <ul id="prevTreatmentsList">
-                    <!-- Previous Treatments  -->
+                    <span>{{Treatment.appointment.date}} - {{Treatment.appointment.patient.user.first_name}} by  DR. {{Treatment.appointment.doctor.user.first_name}}</span>
+                    <br><p>Result: {{Treatment.remarks}}</p>
+                    <br>
                 </ul>
                 <a href="{%url 'treatments'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
             </div>
