@@ -1,0 +1,32 @@
+{% extends "AMS/base.html"%}
+{%load static%}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/treatments_style.css' %}">{% endblock %}
+
+{% block title %}Treatments{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="margin-left: 40%; margin-top: 20px;">Treatments</h1>
+    <table class="treatment-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Doctor</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        {% for treatment in Treatments%}
+        <tbody id="treatment-table-body">
+            <!-- Data will be dynamically populated here -->    
+                <td>{{treatment.appointment.date}}</td>
+                <td>{{treatment.appointment.doctor.user.first_name}} {{treatment.appointment.doctor.user.last_name}}</td>
+                <td> {{treatment.remarks}}</td>  
+        </tbody>
+        {%endfor %}
+    </table>
+
+    {%endblock%}
+
+    {% block extra_js%} <script src="AMS/js/treatments_script.js"></script>{%endblock%}
+    
