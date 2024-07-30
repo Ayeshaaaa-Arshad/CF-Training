@@ -11,6 +11,13 @@
   <div class="doctor-details">
     <div class="doctor-info" id="doctor-info">
         <!-- Doctor details will be populated here -->
+        <img class="doctor-img" src="{{Doctor.user.image}}" alt="Doctor Picture">
+        <h2>{{Doctor.user.first_name}} {{Doctor.user.last_name}}</h2>
+        <p>{{Doctor.designation}}</p>
+        {% comment %} <h3>Price: $${topDoctor.price}</h3> {% endcomment %}
+        <label for="appointment-date">Select Appointment Date:</label>
+        <input type="date" id="appointment-date" name="appointment-date">
+        <button id="book-appointment-btn" class="btn" onclick="booked()">Book Appointment</button> 
     </div>
 </div>
 

@@ -4,7 +4,7 @@
 
 {% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/index_style.css' %}">{% endblock %}
 
-{% block title %}Home - Medicare{% endblock %}
+{% block title %}Medicare{% endblock %}
 
 {% block content %}
     <!-- Background Image Slider -->
@@ -26,17 +26,17 @@
                 {%for doctor in Doctors%}
             <div class="doctor-card"> 
                     <div>
-                         <img class="doctor-img" src="media/{{doctor.image}}" alt="Doctor Picture">
+                         <img class="doctor-img" src="media/{{doctor.user.image}}" alt="Doctor Picture">
                     </div>
                         <div class="doctor-info">
                             <table class="info-table">
                                 <tbody><tr>
                                     <td>Name:</td>
-                                    <td>{{doctor.first_name}} {{doctor.last_name}}</td>
+                                    <td>{{doctor.user.first_name}} {{doctor.user.last_name}}</td>
                                 </tr>
                                 <tr>
                                     <td>Email:</td>
-                                    <td>{{doctor.email}}</td>
+                                    <td>{{doctor.user.email}}</td>
                                 </tr>
                                 <tr>
                                     <td>Designation:</td>
@@ -58,9 +58,9 @@
             <div class="announcements-slider">
                 <div class="announcement-container">
                     <!-- Announcements -->
-                     {% for announcement in announcements%}
+                     {% for announcement in Announcements%}
                     <div class="announcement-card" style="display: none;">
-                        <h3>Dr. {{announcement.creator.first_name}}</h3>
+                        <h3>{{announcement.title}}</h3>
                         <p>{{announcement.description}}</p>
                     </div>
                     {%endfor%}
@@ -72,9 +72,11 @@
             <div class="prev-treatments">
                 <h2>Previous Treatments</h2>
                 <ul id="prevTreatmentsList">
-                    <!-- Previous Treatments  -->
+                    <span>{{Treatment.appointment.date}} - {{Treatment.appointment.patient.user.first_name}} by  DR. {{Treatment.appointment.doctor.user.first_name}}</span>
+                    <br><p>Result: {{Treatment.remarks}}</p>
+                    <br>
                 </ul>
-                <a href="{%url 'prev_treatments'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
+                <a href="{%url 'treatments'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
             </div>
         </div>
     </div>
