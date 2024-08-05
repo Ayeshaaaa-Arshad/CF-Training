@@ -23,7 +23,7 @@ header {
 }
 
 .profile-label {
-    margin-right: 5px;
+    margin-left: 7px;
     color: #FFF;
     font-weight: bold;
     font-size: 16px;
@@ -42,6 +42,22 @@ header {
     font-size: 16px;
     text-decoration: none;
     margin-left: 10px;
+    text-decoration: underline;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+.navbar-links .nav-link {
+    color: #fff;
+    text-decoration: underline;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+.navbar-links .nav-link:hover {
     text-decoration: underline;
 }
 

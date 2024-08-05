@@ -1,12 +1,11 @@
 {% load static %}
-<!-- base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Medicare{% endblock %}</title>
-    <link rel="stylesheet" href="{% static '/AMS/css/base_style.css' %}">
+    <link rel="stylesheet" href="{% static 'AMS/css/base_style.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -17,9 +16,26 @@
                 <a href="{% url 'index' %}"><img src="{% static 'AMS/images/hospital_logo.jpeg' %}" alt="Pharmacy Logo" style="width: 50px; border-radius: 10px;"></a>
                 <a href="{% url 'index' %}"><span class="logo-text">Medicare</span></a>
             </div>
+            <div class="navbar-links">
+                {% if role != 'Patient'%}
+                <a href="{% url 'patient_list' %}" class="nav-link">Patients</a>
+                {% endif %}  
+                <a href="{% url 'doctor_list' %}" class="nav-link">Doctors</a>
+                <a href="{% url 'receptionist_list' %}" class="nav-link">Receptionists</a>
+                <a href="{% url 'appointment_list' %}" class="nav-link">Appointments</a>
+                <a href="{% url 'treatment_list' %}" class="nav-link">Treatments</a>
+                <a href="{% url 'announcement_list' %}" class="nav-link">Announcements</a>
+                {% if role == 'Admin'%}
+                <a href="{% url 'disease_list' %}" class="nav-link">Diseases</a>
+                {%endif%}
+            </div>
             <div class="navbar-profile">
-                <a href="{% url 'edit_profile' %}"><span class="profile-label">Profile</span></a>
-                <a href="{% url 'edit_profile' %}"><img id="profile-img" src="{% static 'AMS/images/profile-img.jpeg' %}" alt="profile-img" class="profile-img"></a>
+               {% if user.is_authenticated %}
+               <a href="{% url 'edit_profile' id %}"><img id="profile-img" src="media/{{user.image}}" alt="profile-img" class="profile-img"></a>
+               <a href="{% url 'logout' %}" class="profile-label">Logout</a>
+               {% else %}
+               <a href="{% url 'login' %}" class="nav-link">Login</a>
+               {% endif %}
             </div>
         </nav>
     </header>

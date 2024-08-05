@@ -1,26 +1,22 @@
-{% extends 'AMS/base.html' %}
+
 {% load static %}
+<link rel="stylesheet" href="{% static 'AMS/css/login_style.css' %}">
 
-{% block extra_css %}<link rel="stylesheet" href="{% static '/AMS/css/login_style.css' %}">{% endblock %}
-
-{% block title %}Login-Signup{% endblock %}
-
-{% block content %}
 <div class="container">
     <div class="form-container">
-        <form id="loginForm" class="form">
+        <form method="post" class="form">
+            {% csrf_token %}
             <h2 class="form-title">Login</h2>
-            <input type="text" id="loginUsername" placeholder="Username" required>
-            <input type="password" id="loginPassword" placeholder="Password" required>
+            {{ form.as_p }}
             <button type="submit" class="form-btn">Login</button>
+            <a href="{% url 'signup' %}"> New to this site? Signup</a>
         </form>
+        
     </div>
 </div>
+
 
 <div class="popup" id="popup">
     <p id="popupMessage">Default message</p>
 </div>
-{%endblock%}
 
-{% block extra_js%} <script src="AMS/js/login_script.js"></script>{%endblock%}
-    

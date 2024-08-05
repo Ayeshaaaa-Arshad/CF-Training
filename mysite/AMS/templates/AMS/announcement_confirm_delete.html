@@ -1,0 +1,22 @@
+{% extends "AMS/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'AMS/css/announcements_style.css' %}">
+{% endblock %}
+
+{% block title %}Confirm Delete{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">Confirm Deletion</h1>
+
+    <p>Are you sure you want to delete the announcement titled "{{ object.title }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirm</button>
+        <a href="{% url 'announcement_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
