@@ -23,7 +23,7 @@
 
         <div class="main-body">    
             <div id="doctor-info-container" class="doctor-cards">
-                {%for doctor in Doctors%}
+                {%for doctor in DataForGrid%}
             <div class="doctor-card"> 
                     <div>
                          <img class="doctor-img" src="media/{{doctor.user.image}}" alt="Doctor Picture">
@@ -39,19 +39,50 @@
                                     <td>{{doctor.user.email}}</td>
                                 </tr>
                                 <tr>
+                                    {%if role != 'Doctor'%}
                                     <td>Designation:</td>
                                     <td>{{doctor.designation}}</td>
+                                    
+                                    {%else%}
+                                    <td>Age:</td>
+                                    <td>{{doctor.age}}</td>
+                                    {%endif%}
                                 </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
+                            {%if role == 'Patient'%}
                             <div class="buttons">
                                 <button class="book-btn" onclick="redirectToBooking()">Book Appointment</button>
-                                <button class="cancel-btn" onclick="confirmCancel()">Cancel Appointment</button>     
-                            </div>
-                               
+                                </div>    
+                            {%endif%}       
                         </div>   
                     </div>
                     {%endfor%}
+                    
                 </div>
+                
+        {%if role == 'Admin'%}
+        <div class="admin-card">       
+                <div class="doctor-info">
+                    <table class="info-table">
+                        <tbody><tr>
+                            <td>Patient Count :</td>
+                            <td>{{patient_count}}</td>
+                        </tr>
+                        <tr>
+                            <td>Doctor Count :</td>
+                            <td>{{doctor_count}}</td>
+                        </tr>
+                        <tr>
+                            <td>Receptionist Count :</td>
+                            <td>{{receptionist_count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        {%endif%}
                
         <div class="second-div">
             <!-- Announcements Section -->
@@ -65,38 +96,26 @@
                     </div>
                     {%endfor%}
                 </div>
-                <button class="prev-announcement" onclick="changeAnnouncement(-1)">&#10094;</button>
-                <button class="next-announcement" onclick="changeAnnouncement(1)">&#10095;</button>
             </div>
 
+            {%if role != 'Receptionist' and role != 'Admin'%}
             <div class="prev-treatments">
-                <h2>Previous Treatments</h2>
+                <h2>Last Treatment</h2>
                 <ul id="prevTreatmentsList">
-                    <span>{{Treatment.appointment.date}} - {{Treatment.appointment.patient.user.first_name}} by  DR. {{Treatment.appointment.doctor.user.first_name}}</span>
+                    <span><b>Patient :</b> {{Treatment.patient.user.first_name}} by  <b>Doctor:</b> {{Treatment.doctor.user.first_name}} - {{Treatment.appointment.appointment_date}}</span>
                     <br><p>Result: {{Treatment.remarks}}</p>
                     <br>
                 </ul>
-                <a href="{%url 'treatments'%}" style="margin-left: 75px;font-weight: 1000;">Click here to see all treatments</a>
-            </div>
+                </div>
+            {%endif%}
         </div>
     </div>
 
-    <!-- Pagination -->
-    <div class="pagination">
-        <button id="btn-prev" onclick="prevPage()">Previous</button>
-        <div id="page-numbers" class="page-numbers">
-            <!-- Page number buttons will change auto in js file-->
-        </div>
-        <button id="btn-next" onclick="nextPage()">Next</button>
-    </div>
+    {%if role == 'Doctor' and not role == 'Admin'%}
+    <a href ="{% url 'patient_list'%}" style = "margin-left:50%;"> Click to see all Patients </a>
+    {%elif not role == 'Admin'%}
+    <a href ="{% url 'doctor_list'%}" style = "margin-left:50%;"> Click to see more doctors </a>
+    {%endif%}
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Are you sure you want to cancel this appointment?</p>
-            <button id="confirm-cancel-btn" class="confirm-btn" onclick="cancelAppointment()">Yes, Cancel Appointment</button>
-        </div>
-    </div>
     {% block extra_js %} <script src="{% static 'AMS/js/index_script.js' %}"></script>{% endblock %}
 {% endblock %}

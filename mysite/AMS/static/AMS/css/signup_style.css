@@ -74,3 +74,23 @@ input[type="email"] {
         opacity: 1;
     }
 }
+
+
+.form-errors {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.field-errors {
+    margin-bottom: 10px;
+}
+
+.error-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-list li {
+    margin: 0;
+}

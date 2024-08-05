@@ -1,0 +1,22 @@
+{% extends "AMS/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'AMS/css/diseases_form_style.css' %}">
+{% endblock %}
+
+{% block title %}Create/Update Disease{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="margin-left: 40%; margin-top: 20px;">{{ form.instance.pk|yesno:"Update Disease,Create Disease" }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{{ form.instance.pk|yesno:"Update Disease,Create Disease" }}</button>
+        <a href="{% url 'disease_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+

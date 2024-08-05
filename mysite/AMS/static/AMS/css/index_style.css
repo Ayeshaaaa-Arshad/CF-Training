@@ -68,6 +68,14 @@
     display:flex;
     width:150%;
 }
+.admin-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display:flex;
+    width:30%;
+}
 
 .doctor-card img {
     max-width: 100px;
@@ -131,6 +139,21 @@
 
 .book-btn {
     background-color: #3E4E56;
+}
+
+.Treatment-btn, .Appointment-btn {
+    background-color: #3E4E56;
+    padding: 10px 20px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.Treatment-btn:hover, .Appointment-btn:hover {
+    background-color: #0056b3;
 }
 
 .cancel-btn {

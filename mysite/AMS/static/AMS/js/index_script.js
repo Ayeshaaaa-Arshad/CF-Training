@@ -69,4 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5000);
 
     showCurrentAnnouncement();
+
+      // Treatment and Appointment Redirection
+      window.redirectToTreatment = function() {
+        window.location.href = "treatments";
+    }
+
+    window.redirectToAppointments = function() {
+        window.location.href = "{%url 'appointments' %}";
+    }
 });
